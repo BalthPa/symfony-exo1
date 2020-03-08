@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TachesController!{% endblock %}
+
+{% block body %}
+<ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Taches</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../" active>Utilisateurs</a>
+                </li>
+</ul>
+
+<div class='container'>
+    <div class='jumbotron'>
+        <h1>Toutes les taches</h1>
+    
+            {% for task in tasks %}
+            <div class="card-body">
+                    <h5 class="card-title">{{task.name}}</h5>
+                    <p class='card-text'>Deadline : {{task.deadline | date('d/m/Y')}}</p>
+                    <a href="task/{{task.id}}" class="btn btn-primary">Voir plus</a>
+                    
+                </div>
+        {% endfor %}
+        
+    </div>
+
+    <div class='jumbotron'>
+        <h1>Ajouter une tache</h1>
+
+        {{ form_start(formTasks) }}
+        {{form_row(formTasks.name)}}
+        {{form_row(formTasks.deadline)}}
+            <select name="userId" id="">
+                    <option selected disabled>Choisissez un utilisateur</option>
+                {% for user in users %}
+                    <option value="{{user.id}}">{{user.name}} {{user.firstname}}</option>
+                {% endfor %}
+            </select>
+            {{form_row(formTasks.status)}}
+            <button type="submit">Envoyer</button>
+        {{ form_end(formTasks) }}
+
+    </div>
+</div>
+{% endblock %}

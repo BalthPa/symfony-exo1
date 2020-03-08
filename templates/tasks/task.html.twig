@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Taches</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../" active>Utilisateurs</a>
+                </li>
+</ul>
+
+    <div class="container">
+        <div class="jumbotron">
+            {{ form_start(taskUpdate) }}
+            {{form_row(taskUpdate.name)}}
+            {{form_row(taskUpdate.deadline)}}
+            <select name="userId" id="">
+                    <option selected disabled>Changer d'utilisateur</option>
+                {% for user in users %}
+                    <option value="{{user.id}}">{{user.name}} {{user.firstname}}</option>
+                {% endfor %}
+            </select>
+            {{form_row(taskUpdate.status)}}
+            <button type="submit">Envoyer</button>
+        {{ form_end(taskUpdate) }}
+        </div>
+    </div>
+
+{% endblock body %}
