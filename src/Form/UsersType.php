@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Form;
 
 use App\Entity\Users;
@@ -29,8 +28,7 @@ class UsersType extends AbstractType
             ])
             ->add('submit',SubmitType::class, [
                 'attr'=> ["class" => 'btn btn-primary']
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

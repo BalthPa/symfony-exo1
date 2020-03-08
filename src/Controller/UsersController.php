@@ -46,6 +46,7 @@ class UsersController extends AbstractController
      /**
      * @Route("/user/{id}", name="showUser")
      */
+
     public function update($id, Request $request, EntityManagerInterface $entityManager){
 
     
@@ -61,11 +62,8 @@ class UsersController extends AbstractController
 
 
         if ($form->isSubmitted() && $form->isValid()){
-
-            //$task = $TaskRepository->find($request->request->get('taskId'));
             
             $users = $form->getData();
-            //$users->settaskId($task);
 
             $entityManager->persist($users);
             $entityManager->flush();

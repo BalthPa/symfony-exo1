@@ -15,7 +15,6 @@
     <div class="container">
         <div class="jumbotron">
             <h1>Liste d'utilisateurs</h1>
-        
             {% for user in users %}
                 <div class="card-body">
                     <h5 class="card-title">{{user.name}} {{user.firstname}}</h5>
@@ -24,8 +23,8 @@
                     <a href="user/{{user.id}}" class="btn btn-primary">Voir plus</a>
                 </div>
             {% endfor %}
-        
         </div>
+
         <div class="jumbotron">
             <h2>Ajouter utilisateur</h2>
         {{form(formUsers)}}
