@@ -24,8 +24,7 @@ class TasksType extends AbstractType
             ->add('status', CheckboxType::class, [
                 'label'    => 'Effectué ? ',
                 'required' => false,
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

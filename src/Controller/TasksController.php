@@ -52,10 +52,11 @@ class TasksController extends AbstractController
     /**
      * @Route("/task/{id}", name="showTask")
      */
+
     public function update($id, Request $request, EntityManagerInterface $entityManager){
 
         $task = $this->getDoctrine()
-                        ->getRepository(Tasks::class)->find($id);
+                    ->getRepository(Tasks::class)->find($id);
 
         $UserRepository = $this->getDoctrine()
                         ->getRepository(Users::class);
@@ -63,8 +64,6 @@ class TasksController extends AbstractController
 
         $form = $this->createForm(TasksType::class, $task);
         $form->handleRequest($request);
-
-
 
         if ($form->isSubmitted() && $form->isValid()){
 
