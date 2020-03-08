@@ -129,7 +129,7 @@ $context["task"], "status", [], "any", false, false, false, 25), 1)) {
             echo "                    <a href=\"task/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "id", [], "any", false, false, false, 28), "html", null, true);
             echo "\" class=\"btn btn-primary\">Modifier</a>
-                    <a href=\"/";
+                    <a href=\"remove/";
             // line 29
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "id", [], "any", false, false, false, 29), "html", null, true);
             echo "\" class=\"btn btn-danger\">Supprimer</a>
@@ -247,7 +247,7 @@ $context["task"], "status", [], "any", false, false, false, 25), 1)) {
                         <p>Fait</p>
                     {% endif %}
                     <a href=\"task/{{task.id}}\" class=\"btn btn-primary\">Modifier</a>
-                    <a href=\"/{{task.id}}\" class=\"btn btn-danger\">Supprimer</a>
+                    <a href=\"remove/{{task.id}}\" class=\"btn btn-danger\">Supprimer</a>
                     
                 </div>
         {% endfor %}
