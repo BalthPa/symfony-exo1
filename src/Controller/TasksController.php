@@ -84,4 +84,16 @@ class TasksController extends AbstractController
             'task' => $task
         ]);
         }
+
+        /**
+     * @Route("remove/{id}", name="removeTask")
+     */
+    public function remove($id, EntityManagerInterface $entityManager){
+
+        $task = $this->taskRepository = $this->getDoctrine()
+                        ->getRepository(Tasks::class)->find($id);
+        $entityManager->remove($task);
+        $entityManager->flush();
+        return $this->redirectToRoute('tasks');
+    }
 }

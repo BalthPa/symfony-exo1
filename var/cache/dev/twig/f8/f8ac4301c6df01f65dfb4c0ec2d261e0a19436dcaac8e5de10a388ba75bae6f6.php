@@ -175,6 +175,6 @@ class __TwigTemplate_c9e2e957f3fa0efcd33df159693291808871b3d16aed1db9b68f3dfe926
         {% block javascripts %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/Applications/MAMP/htdocs/A2/symfonyExo1/templates/base.html.twig");
+", "base.html.twig", "/Applications/MAMP/htdocs/A2/symfony-exo1/templates/base.html.twig");
     }
 }

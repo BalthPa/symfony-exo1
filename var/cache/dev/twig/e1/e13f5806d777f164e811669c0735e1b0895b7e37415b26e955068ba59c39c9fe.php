@@ -66,12 +66,12 @@ class __TwigTemplate_b7704c9eda8ef0ebdeff0adfff4d3acf9a8bd248f062bdb990f3c6f4e1d
 
         // line 4
         echo "
- <ul class=\"nav justify-content-center\">
+    <ul class=\"nav justify-content-center\">
                 <li class=\"nav-item\">
                     <a class=\"nav-link active\" href=\"/tasks\">Taches</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\" active>Utilisateurs</a>
+                    <a class=\"nav-link\" href=\"../\" active>Utilisateurs</a>
                 </li>
     </ul>
 
@@ -99,6 +99,8 @@ class __TwigTemplate_b7704c9eda8ef0ebdeff0adfff4d3acf9a8bd248f062bdb990f3c6f4e1d
         echo "
         </div>
     </div>
+
+
 
 ";
         
@@ -130,12 +132,12 @@ class __TwigTemplate_b7704c9eda8ef0ebdeff0adfff4d3acf9a8bd248f062bdb990f3c6f4e1d
 
 {% block body %}
 
- <ul class=\"nav justify-content-center\">
+    <ul class=\"nav justify-content-center\">
                 <li class=\"nav-item\">
                     <a class=\"nav-link active\" href=\"/tasks\">Taches</a>
                 </li>
                 <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\" active>Utilisateurs</a>
+                    <a class=\"nav-link\" href=\"../\" active>Utilisateurs</a>
                 </li>
     </ul>
 
@@ -149,7 +151,9 @@ class __TwigTemplate_b7704c9eda8ef0ebdeff0adfff4d3acf9a8bd248f062bdb990f3c6f4e1d
         </div>
     </div>
 
+
+
 {% endblock body %}
-", "users/user.html.twig", "/Applications/MAMP/htdocs/A2/symfonyExo1/templates/users/user.html.twig");
+", "users/user.html.twig", "/Applications/MAMP/htdocs/A2/symfony-exo1/templates/users/user.html.twig");
     }
 }

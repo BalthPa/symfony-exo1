@@ -97,46 +97,45 @@ class __TwigTemplate_8f107b59316735fdbb3cc2e77c88b6689666986d84e24a29515ad95234e
     <div class=\"container\">
         <div class=\"jumbotron\">
             <h1>Liste d'utilisateurs</h1>
-        
             ";
-        // line 19
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 18, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 20
-            echo "                <div class=\"card-body\">
+            // line 19
+            echo "                <div class=\"card-body bg-light m-5\">
                     <h5 class=\"card-title\">";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "name", [], "any", false, false, false, 21), "html", null, true);
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "name", [], "any", false, false, false, 20), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "firstname", [], "any", false, false, false, 21), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "firstname", [], "any", false, false, false, 20), "html", null, true);
             echo "</h5>
                     <p class=\"card-text\">";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "mail", [], "any", false, false, false, 22), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "mail", [], "any", false, false, false, 21), "html", null, true);
             echo "</p>
                     <p class='card-text'>Crée le ";
-            // line 23
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "createdAt", [], "any", false, false, false, 23), "d/m/Y"), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "createdAt", [], "any", false, false, false, 22), "d/m/Y"), "html", null, true);
             echo "</p>
                     <a href=\"user/";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 24), "html", null, true);
-            echo "\" class=\"btn btn-primary\">Voir plus</a> 
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 23), "html", null, true);
+            echo "\" class=\"btn btn-primary\">Voir plus</a>
                 </div>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
-        echo "        
-        </div>
+        // line 26
+        echo "        </div>
+
         <div class=\"jumbotron\">
             <h2>Ajouter utilisateur</h2>
         ";
-        // line 31
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formUsers"]) || array_key_exists("formUsers", $context) ? $context["formUsers"] : (function () { throw new RuntimeError('Variable "formUsers" does not exist.', 31, $this->source); })()), 'form');
+        // line 30
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formUsers"]) || array_key_exists("formUsers", $context) ? $context["formUsers"] : (function () { throw new RuntimeError('Variable "formUsers" does not exist.', 30, $this->source); })()), 'form');
         echo "
         </div>
     </div>
@@ -161,7 +160,7 @@ class __TwigTemplate_8f107b59316735fdbb3cc2e77c88b6689666986d84e24a29515ad95234e
 
     public function getDebugInfo()
     {
-        return array (  139 => 31,  133 => 27,  124 => 24,  120 => 23,  116 => 22,  110 => 21,  107 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  138 => 30,  132 => 26,  123 => 23,  119 => 22,  115 => 21,  109 => 20,  106 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -183,23 +182,22 @@ class __TwigTemplate_8f107b59316735fdbb3cc2e77c88b6689666986d84e24a29515ad95234e
     <div class=\"container\">
         <div class=\"jumbotron\">
             <h1>Liste d'utilisateurs</h1>
-        
             {% for user in users %}
-                <div class=\"card-body\">
+                <div class=\"card-body bg-light m-5\">
                     <h5 class=\"card-title\">{{user.name}} {{user.firstname}}</h5>
                     <p class=\"card-text\">{{user.mail}}</p>
                     <p class='card-text'>Crée le {{user.createdAt | date('d/m/Y')}}</p>
-                    <a href=\"user/{{user.id}}\" class=\"btn btn-primary\">Voir plus</a> 
+                    <a href=\"user/{{user.id}}\" class=\"btn btn-primary\">Voir plus</a>
                 </div>
             {% endfor %}
-        
         </div>
+
         <div class=\"jumbotron\">
             <h2>Ajouter utilisateur</h2>
         {{form(formUsers)}}
         </div>
     </div>
 {% endblock %}
-", "users/index.html.twig", "/Applications/MAMP/htdocs/A2/symfonyExo1/templates/users/index.html.twig");
+", "users/index.html.twig", "/Applications/MAMP/htdocs/A2/symfony-exo1/templates/users/index.html.twig");
     }
 }

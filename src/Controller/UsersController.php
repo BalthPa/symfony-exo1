@@ -52,14 +52,10 @@ class UsersController extends AbstractController
     
         $user = $this->getDoctrine()
                         ->getRepository(Users::class)->find($id);
-        $TaskRepository = $this->getDoctrine()
-                        ->getRepository(Tasks::class);
-        $tasks = $TaskRepository->findAll();
+
 
         $form = $this->createForm(UsersType::class, $user);
         $form->handleRequest($request);
-
-
 
         if ($form->isSubmitted() && $form->isValid()){
             
@@ -74,7 +70,6 @@ class UsersController extends AbstractController
         return $this->render('users/user.html.twig', [
             'user' => $user,
             'formUpdate' => $form->createView(),
-            'tasks' => $tasks
         ]);
         }
 }

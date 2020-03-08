@@ -16,7 +16,7 @@
         <div class="jumbotron">
             <h1>Liste d'utilisateurs</h1>
             {% for user in users %}
-                <div class="card-body">
+                <div class="card-body bg-light m-5">
                     <h5 class="card-title">{{user.name}} {{user.firstname}}</h5>
                     <p class="card-text">{{user.mail}}</p>
                     <p class='card-text'>Crée le {{user.createdAt | date('d/m/Y')}}</p>

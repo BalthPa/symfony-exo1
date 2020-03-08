@@ -104,7 +104,7 @@ class __TwigTemplate_eda97a25f5c31ab04d3eebcb40353882d5255ee9c619441f4a71ca48631
         $context['_seq'] = twig_ensure_traversable((isset($context["tasks"]) || array_key_exists("tasks", $context) ? $context["tasks"] : (function () { throw new RuntimeError('Variable "tasks" does not exist.', 19, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["task"]) {
             // line 20
-            echo "            <div class=\"card-body\">
+            echo "            <div class=\"card-body bg-light m-5\">
                     <h5 class=\"card-title\">";
             // line 21
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "name", [], "any", false, false, false, 21), "html", null, true);
@@ -113,17 +113,34 @@ class __TwigTemplate_eda97a25f5c31ab04d3eebcb40353882d5255ee9c619441f4a71ca48631
             // line 22
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "deadline", [], "any", false, false, false, 22), "d/m/Y"), "html", null, true);
             echo "</p>
-                    <a href=\"task/";
+                    ";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "id", [], "any", false, false, false, 23), "html", null, true);
-            echo "\" class=\"btn btn-primary\">Voir plus</a>
+            if (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["task"], "status", [], "any", false, false, false, 23), 0)) {
+                // line 24
+                echo "                        <p>A Faire</p>
+                    ";
+            } elseif (0 === twig_compare(twig_get_attribute($this->env, $this->source,             // line 25
+$context["task"], "status", [], "any", false, false, false, 25), 1)) {
+                // line 26
+                echo "                        <p>Fait</p>
+                    ";
+            }
+            // line 28
+            echo "                    <a href=\"task/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "id", [], "any", false, false, false, 28), "html", null, true);
+            echo "\" class=\"btn btn-primary\">Modifier</a>
+                    <a href=\"/";
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "id", [], "any", false, false, false, 29), "html", null, true);
+            echo "\" class=\"btn btn-danger\">Supprimer</a>
+                    
                 </div>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['task'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
+        // line 33
         echo "        
     </div>
 
@@ -131,47 +148,47 @@ class __TwigTemplate_eda97a25f5c31ab04d3eebcb40353882d5255ee9c619441f4a71ca48631
         <h1>Ajouter une tache</h1>
 
         ";
-        // line 32
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formTasks"]) || array_key_exists("formTasks", $context) ? $context["formTasks"] : (function () { throw new RuntimeError('Variable "formTasks" does not exist.', 32, $this->source); })()), 'form_start');
+        // line 39
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formTasks"]) || array_key_exists("formTasks", $context) ? $context["formTasks"] : (function () { throw new RuntimeError('Variable "formTasks" does not exist.', 39, $this->source); })()), 'form_start');
         echo "
         ";
-        // line 33
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formTasks"]) || array_key_exists("formTasks", $context) ? $context["formTasks"] : (function () { throw new RuntimeError('Variable "formTasks" does not exist.', 33, $this->source); })()), "name", [], "any", false, false, false, 33), 'row');
+        // line 40
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formTasks"]) || array_key_exists("formTasks", $context) ? $context["formTasks"] : (function () { throw new RuntimeError('Variable "formTasks" does not exist.', 40, $this->source); })()), "name", [], "any", false, false, false, 40), 'row');
         echo "
         ";
-        // line 34
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formTasks"]) || array_key_exists("formTasks", $context) ? $context["formTasks"] : (function () { throw new RuntimeError('Variable "formTasks" does not exist.', 34, $this->source); })()), "deadline", [], "any", false, false, false, 34), 'row');
+        // line 41
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formTasks"]) || array_key_exists("formTasks", $context) ? $context["formTasks"] : (function () { throw new RuntimeError('Variable "formTasks" does not exist.', 41, $this->source); })()), "deadline", [], "any", false, false, false, 41), 'row');
         echo "
             <select name=\"userId\" id=\"\">
                     <option selected disabled>Choisissez un utilisateur</option>
                 ";
-        // line 37
+        // line 44
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 37, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 44, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 38
+            // line 45
             echo "                    <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 38), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 45), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "name", [], "any", false, false, false, 38), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "name", [], "any", false, false, false, 45), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "firstname", [], "any", false, false, false, 38), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "firstname", [], "any", false, false, false, 45), "html", null, true);
             echo "</option>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
+        // line 47
         echo "            </select>
             ";
-        // line 41
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formTasks"]) || array_key_exists("formTasks", $context) ? $context["formTasks"] : (function () { throw new RuntimeError('Variable "formTasks" does not exist.', 41, $this->source); })()), "status", [], "any", false, false, false, 41), 'row');
+        // line 48
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formTasks"]) || array_key_exists("formTasks", $context) ? $context["formTasks"] : (function () { throw new RuntimeError('Variable "formTasks" does not exist.', 48, $this->source); })()), "status", [], "any", false, false, false, 48), 'row');
         echo "
             <button type=\"submit\">Envoyer</button>
         ";
-        // line 43
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formTasks"]) || array_key_exists("formTasks", $context) ? $context["formTasks"] : (function () { throw new RuntimeError('Variable "formTasks" does not exist.', 43, $this->source); })()), 'form_end');
+        // line 50
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formTasks"]) || array_key_exists("formTasks", $context) ? $context["formTasks"] : (function () { throw new RuntimeError('Variable "formTasks" does not exist.', 50, $this->source); })()), 'form_end');
         echo "
 
     </div>
@@ -197,7 +214,7 @@ class __TwigTemplate_eda97a25f5c31ab04d3eebcb40353882d5255ee9c619441f4a71ca48631
 
     public function getDebugInfo()
     {
-        return array (  174 => 43,  169 => 41,  166 => 40,  153 => 38,  149 => 37,  143 => 34,  139 => 33,  135 => 32,  127 => 26,  118 => 23,  114 => 22,  110 => 21,  107 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  191 => 50,  186 => 48,  183 => 47,  170 => 45,  166 => 44,  160 => 41,  156 => 40,  152 => 39,  144 => 33,  134 => 29,  129 => 28,  125 => 26,  123 => 25,  120 => 24,  118 => 23,  114 => 22,  110 => 21,  107 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -221,10 +238,17 @@ class __TwigTemplate_eda97a25f5c31ab04d3eebcb40353882d5255ee9c619441f4a71ca48631
         <h1>Toutes les taches</h1>
     
             {% for task in tasks %}
-            <div class=\"card-body\">
+            <div class=\"card-body bg-light m-5\">
                     <h5 class=\"card-title\">{{task.name}}</h5>
                     <p class='card-text'>Deadline : {{task.deadline | date('d/m/Y')}}</p>
-                    <a href=\"task/{{task.id}}\" class=\"btn btn-primary\">Voir plus</a>
+                    {% if task.status == 0 %}
+                        <p>A Faire</p>
+                    {% elseif task.status == 1 %}
+                        <p>Fait</p>
+                    {% endif %}
+                    <a href=\"task/{{task.id}}\" class=\"btn btn-primary\">Modifier</a>
+                    <a href=\"/{{task.id}}\" class=\"btn btn-danger\">Supprimer</a>
+                    
                 </div>
         {% endfor %}
         
@@ -249,6 +273,6 @@ class __TwigTemplate_eda97a25f5c31ab04d3eebcb40353882d5255ee9c619441f4a71ca48631
     </div>
 </div>
 {% endblock %}
-", "tasks/index.html.twig", "/Applications/MAMP/htdocs/A2/symfonyExo1/templates/tasks/index.html.twig");
+", "tasks/index.html.twig", "/Applications/MAMP/htdocs/A2/symfony-exo1/templates/tasks/index.html.twig");
     }
 }

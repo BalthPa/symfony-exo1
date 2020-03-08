@@ -67,7 +67,7 @@ class __TwigTemplate_f8e3b1372f9e4e4622748fe86f72a497d1a235785850199e0d480806b6d
         // line 4
         echo "<ul class=\"nav justify-content-center\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link active\" href=\"#\">Taches</a>
+                    <a class=\"nav-link active\" href=\"../tasks\">Taches</a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"../\" active>Utilisateurs</a>
@@ -153,7 +153,7 @@ class __TwigTemplate_f8e3b1372f9e4e4622748fe86f72a497d1a235785850199e0d480806b6d
 {% block body %}
 <ul class=\"nav justify-content-center\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link active\" href=\"#\">Taches</a>
+                    <a class=\"nav-link active\" href=\"../tasks\">Taches</a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"../\" active>Utilisateurs</a>
@@ -178,6 +178,6 @@ class __TwigTemplate_f8e3b1372f9e4e4622748fe86f72a497d1a235785850199e0d480806b6d
     </div>
 
 {% endblock body %}
-", "tasks/task.html.twig", "/Applications/MAMP/htdocs/A2/symfonyExo1/templates/tasks/task.html.twig");
+", "tasks/task.html.twig", "/Applications/MAMP/htdocs/A2/symfony-exo1/templates/tasks/task.html.twig");
     }
 }
